@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kaus SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <style>
+             body {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #f8f5f1;
+    margin: 0;
+}
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: url('SHARKO Wallpaper.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Overlay Gelap */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Animasi Parallax */
+@keyframes parallaxBg {
+    0% {
+        background-position: center center;
+    }
+    100% {
+        background-position: center 10%;
+    }
+}
+
+.hero {
+    animation: parallaxBg 10s linear infinite alternate;
+}
+
+/* Animasi Fade-in dan Zoom */
+.hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: fadeZoomIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animasi Teks */
+.hero .content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero .content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 3px 2px #0051ff;
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: #fc47c6;
+}
+
+.hero .content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+
+   /* Modern T-Shirt Shop Table Styling */
+   .shirt-list {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background-color: #c8fafc;
+      padding: 40px 20px;
+  }
+
+  .shirt-list h2 {
+      font-size: 2rem;
+      color: #ff3dd5;
+      font-weight: bold;
+      margin-bottom: 10px;
+  }
+
+  .shirt-list p {
+      color: #20c3f5;
+      font-weight: bold;
+      font-size: 20px;
+  }
+
+
+  .sharko-table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sharko-table th, .sharko-table td {
+      padding: 15px;
+      color: #15c5f1;
+      font-weight: bold;
+      font-size: 20px;
+      border: 1px solid #f539d6;
+      text-align: left;
+  }
+
+  .sharko-table th {
+      background-color: #f021b2;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+
+
+  .sharko-table tr:hover {
+      background-color: #ff65e5;
+      transition: 0.3s;
+  }
+
+  /* Menu Section Styling */
+.menu {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+}
+
+.menu-item {
+    text-align: center;
+    width: 250px; /* Agar semua menu memiliki lebar yang sama */
+}
+
+.menu-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #07bbf1;
+    margin-bottom: 10px;
+}
+
+.menu-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #f730d5;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+    background-color: #92077b;
+}
+
+  
+  
+
+    </style>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <center>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <main class="content">
+            <h1>Daftar <span>Harga Kaus</span></h1>
+            <p>Daftar harga dari kaus brand SHARKO</p>
+        </main>
+    </section>
+
+
+<section class="shirt-list" id="shirt-list">
+    <h2>Harga <span>Kaus</span></h2>
+    <p>Daftar harga kaus dari SHARKO</p>
+  
+    <table class="sharko-table">
+      <thead>
+          <tr>
+              <th>No</th>
+              <th>Nama Kaus</th>
+              <th>Harga Satuan Kaus</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>1</td>
+            <td>Sharko Logo</td>
+            <td>Rp.50,000,00, -</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Let's Play In Space</td>
+            <td>Rp.50,000,00, -</td>
+          </tr>
+  <tr>
+            <td>3</td>
+            <td>Ice Cream Party</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>4</td>
+            <td>Sharko Plain</td>
+            <td>Rp.50,000,00, -</td>
+           
+          </tr>
+  <tr>
+            <td>5</td>
+            <td>Bearspace</td>
+            <td>Rp.50,000,00, -</td>
+           
+          </tr>
+  
+  <tr>
+            <td>6</td>
+            <td>Flying Frost</td>
+            <td>Rp.50,000,00, -</td>
+           
+          </tr>
+  <tr>
+            <td>7</td>
+            <td>Future Machine</td>
+            <td>Rp.50,000,00, -</td>
+           
+          </tr>
+  <tr>
+            <td>8</td>
+            <td>Wild Wolf</td>
+            <td>Rp.50,000,00, -</td>
+           
+          </tr>
+  
+  <tr>
+            <td>9</td>
+            <td>Dino In Land</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>10</td>
+            <td>Cat In Bag</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>11</td>
+            <td>Scooter</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>12</td>
+            <td>Dynamic KABOOM</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>13</td>
+            <td>Yummy Yum</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>14</td>
+            <td>Born To Be Queen</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>15</td>
+            <td>Tyrannosaurus Rex</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  
+  <tr>
+            <td>16</td>
+            <td>Good Day Surfing</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>17</td>
+            <td>Classic Riders</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>18</td>
+            <td>Sunny Quack</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+  <tr>
+            <td>19</td>
+            <td>Get Lost In Space</td>
+            <td>Rp.50,000,00, -</td>         
+          </tr>
+      </tbody>
+  </table>
+</section>
+
+<!-- Menu Section -->
+<section class="menu" id="menu">
+    <div class="menu-container">
+        <div class="menu-item">
+            <h3>Galeri Kaus</h3>
+            <a href="galerikaussharko.html" class="menu-button">Galeri Kaus SHARKO</a>
+        </div>
+        <div class="menu-item">
+            <h3>SHARKO Interface</h3>
+            <a href="index.html" class="menu-button">SHARKO</a>
+        </div>
+    </div>
+</section>
+
+
+
+    </center>
+</body>
+</html>

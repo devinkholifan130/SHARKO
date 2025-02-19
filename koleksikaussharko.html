@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Kaus Anak SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <style>
+        body {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #f8f5f1;
+    margin: 0;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: url('Sharko Wallpaper.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Overlay Gelap */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Animasi Parallax */
+@keyframes parallaxBg {
+    0% {
+        background-position: center center;
+    }
+    100% {
+        background-position: center 10%;
+    }
+}
+
+.hero {
+    animation: parallaxBg 10s linear infinite alternate;
+}
+
+/* Animasi Fade-in dan Zoom */
+.hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: fadeZoomIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeZoomIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animasi Teks */
+.hero .content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.hero .content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: #f483ee;
+}
+
+.hero .content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+
+/* Gallery Section */
+.sharko-gallery {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #F3E5D8;
+}
+
+.sharko-gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f2fe2;
+    font-weight: bold;
+}
+
+.sharko-gallery h2 span {
+    color: #ee1dee;
+}
+
+/* Gallery Layout */
+.gallery-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.product-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* Menampilkan seluruh gambar tanpa crop */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8; /* Tambahkan background untuk ruang kosong */
+}
+
+
+.card:hover .product-img {
+    transform: scale(1.05);
+}
+
+
+/* Coffee Item Styling */
+.sharko-item {
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #ee46bb;
+    margin-top: 10px;
+}
+
+.sharko-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d10f49;
+}
+
+
+  /* General Footer Styles */
+  
+  .footer {
+    background: #f5f5f5;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  .container {
+    width: 85%;
+    margin: auto;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    width: 16%;
+  }
+  .footer-section h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .payment-methods img,
+  .shipping-methods img,
+  .social-icons img {
+    width: 40px;
+    margin: 5px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* Menu Section Styling */
+.menu {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.menu-item {
+    text-align: center;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1d70cf;
+    margin-bottom: 10px;
+}
+
+.menu-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e97cb8;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+    background-color: #6a2364;
+}
+
+
+  
+  /* Media Queries */
+  
+  
+  
+  /* Tablet */
+  @media (max-width: 750px) {
+    html {
+      font-size: 62.5%;
+    }
+  
+    #menu {
+      display: inline-block;
+    }
+  
+    .navbar .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: #fff;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.3s;
+    }
+  
+    .navbar .navbar-nav.active {
+      right: 0;
+    }
+  
+    .navbar .navbar-nav a {
+      color: var(--bg);
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+  
+  
+  
+  /* Mobile Phone */
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+  }
+
+  
+  
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+
+    
+    <!-- Feather Icons Script -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+
+</head>
+<body>
+  <center>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <main class="content">
+            <h1>Koleksi Kaus <span>SHARKO</span></h1>
+            <p>Koleksi ini menampilkan berbagai daftar kaus yanng tersedia dari SHARKO</p>
+        </main>
+    </section>
+
+
+
+<!-- Coffee Beans Gallery -->
+<section id="sharko-gallery" class="sharko-gallery">
+    <h2>Galeri Kaus Anak<span> SHARKO</span></h2>
+    <div class="gallery-row">
+        <!-- Individual Cards -->
+
+        <div class="card">
+          <img src="Sharko Logo Shirt.jpg" class="product-img">
+          <div class="sharko-item">
+              <p class="sharko-title">Sharko Logo - Dusty Blue</p>
+          </div>
+      </div>
+
+      <div class="card">
+        <img src="Sharko Logo Shirt Black.jpg" class="product-img">
+        <div class="sharko-item">
+            <p class="sharko-title">Sharko Logo - Hitam</p>
+        </div>
+    </div>
+
+    <div class="card">
+      <img src="Let's Play In Space Shirt.jpg" class="product-img">
+      <div class="sharko-item">
+          <p class="sharko-title">Let's Play In Space - Almond Brown</p>
+      </div>
+  </div>
+
+  <div class="card">
+    <img src="Sharko Logo Shirt Red.jpg" alt="Arabica Coffee" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Sharko Logo - Red</p>
+    </div>
+</div>
+
+<div class="card">
+  <img src="Ice Cream Party Shirt.jpg" class="product-img">
+  <div class="sharko-item">
+      <p class="sharko-title">Ice Cream Party - Dusty Pink</p>
+  </div>
+</div>
+
+<div class="card">
+<img src="Sharko Logo Shirt White.jpg" class="product-img">
+<div class="sharko-item">
+    <p class="sharko-title">Sharko Logo - White</p>
+</div>
+</div>
+
+
+
+<div class="card">
+<img src="Sharko Plain Shirt.jpg" class="product-img">
+<div class="sharko-item">
+    <p class="sharko-title">Sharko Plain - Almond Brown</p>
+</div>
+</div>
+
+
+<div class="card">
+<img src="Bearspace Shirt.jpg" class="product-img">
+<div class="sharko-item">
+    <p class="sharko-title">Bearspace - Dusty Blue</p>
+</div>
+</div>
+
+
+<div class="card">
+<img src="Bearspace Shirt Brown.jpg" class="product-img">
+<div class="sharko-item">
+    <p class="sharko-title">Bearspace - Almond Brown</p>
+</div>
+</div>
+
+
+<div class="card">
+    <img src="Flying Frost Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Flying Frost - Almond Brown</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Future Machine Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Future Machine - Almond Brown</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Wild Wolf Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Wild Wolf - Almond Brown</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Wild Wolf Shirt Blue.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Wild Wolf - Dusty Blue</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Sharko Plain Shirt Blue.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Sharko Plain - Dusty Blue</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Sharko Plain Shirt Pink.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Sharko Plain - Dusty Pink</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Dino Land Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Dino Land - Almond Brown</p>
+    </div>
+    </div>
+    
+    
+<div class="card">
+    <img src="Cat In Bag Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Cat In Bag - Dusty Blue</p>
+    </div>
+    </div>
+    
+    
+<div class="card">
+    <img src="Sharko Logo Brown.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Sharko Logo - Almond Brown</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Dynamite KABOOM Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Dynamite KABOOM - Red</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Born To Be Queen Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Born To Be Queen - Cokelat</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Cat In Bag Shirt White.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Cat In Bag - White</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Tyrannosaurus Rex Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Tyrannosaurus Rex - Black</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Ice Cream Party Shirt Red.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Ice Cream Party - Red</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Good Day Surfing Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Good Day Surfing - White</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Classic Riders Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Classic Riders - Red</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Future Machine Shirt White.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Future Machine - White</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Flying Frost Shirt Pink.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Flying Frost - Dusty Pink</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Bearspace Shirt Black.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Bearspace - Black</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Sunny Quack Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Sunny Quack - Dusty Blue</p>
+    </div>
+    </div>
+    
+
+    
+<div class="card">
+    <img src="Get Lost In Space Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Get Lost In Space - Black</p>
+    </div>
+    </div>
+
+    
+<div class="card">
+    <img src="Scooter Shirt.jpg" class="product-img">
+    <div class="sharko-item">
+        <p class="sharko-title">Scooter - Red</p>
+    </div>
+    </div>
+    
+    
+    
+
+</section>
+
+<!-- Menu Section -->
+<section class="menu" id="menu">
+  <div class="menu-container">
+      <div class="menu-item">
+          <h3>Tampilan Awal SHARKO</h3>
+          <a href="index.html" class="menu-button">SHARKO</a>
+      </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Layanan Pelanggan -->
+        <div class="footer-section">
+          <h4>Layanan Pelanggan</h4>
+          <ul>
+            <li><a href="#">Bantuan</a></li>
+            <li><a href="#">Metode Pembayaran</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+            <li><a href="#">Pengembalian & Dana</a></li>
+            <li><a href="#">Garansi SHARKO</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+  
+        <!-- Jelajahi SHARKO -->
+        <div class="footer-section">
+          <h4>Jelajahi SHARKO</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">SHARKO Mall</a></li>
+            <li><a href="#">Flash Sale</a></li>
+          </ul>
+        </div>
+  
+        <!-- Pembayaran -->
+        <div class="footer-section">
+          <h4>Pembayaran</h4>
+          <div class="payment-methods">
+            <img src="BCA Icon.png" alt="BCA">
+            <img src="BNI Icon.png" alt="BNI">
+            <img src="BRI Icon.png" alt="BRI">
+            <img src="Mandiri Icon.png" alt="Mandiri">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 SHARKO. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+</center>
+</body>
+</html>
