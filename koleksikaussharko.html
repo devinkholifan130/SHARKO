@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Kaus Anak SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <!-- Lightbox2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+    <style>
+        body {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background-color: #f8f5f1;
+    margin: 0;
+}
+/* Hero Section - Tema Anak Ceria */
+.hero {
+    min-height: 100vh;
+    background: url('Sharko Wallpaper.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    animation: moveBackground 15s linear infinite alternate;
+}
+
+/* Overlay dengan warna lebih cerah */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 204, 102, 0.6);
+    z-index: 1;
+}
+
+/* Animasi Parallax dengan Efek Ceria */
+@keyframes moveBackground {
+    0% { background-position: center center; }
+    100% { background-position: center 20%; }
+}
+
+/* Animasi Masuk dengan Sentuhan Ceria */
+.hero .content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: fadeBounceIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeBounceIn {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+    50% { transform: translateY(-10px) scale(1.05); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Animasi Teks */
+.hero .content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textPop 1.5s ease-out 0.5s forwards;
+    text-shadow: 3px 3px 0px #ff66b2, -3px -3px 0px #66ccff;
+}
+
+@keyframes textPop {
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    50% { transform: translateY(-5px) scale(1.1); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero .content h1 span {
+    color: #ffcc00;
+    font-style: italic;
+}
+
+.hero .content p {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    color: #ee0a8f;
+    text-shadow: 2px 2px rgb(248, 238, 238);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 15px;
+    display: inline-block;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* Gallery Section */
+.sharko-gallery {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #F3E5D8;
+}
+
+.sharko-gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f2fe2;
+    font-weight: bold;
+}
+
+.sharko-gallery h2 span {
+    color: #ee1dee;
+}
+
+
+
+/* ========== GALLERY STYLE ========== */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 25px;
+}
+
+/* Kartu Produk */
+.product-card {
+    background: white;
+    width: 240px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    border: 3px solid #ff6ec4;
+}
+
+.product-card:hover {
+    transform: scale(1.07);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 12px 0;
+    color: #ff4081;
+}
+
+  /* General Footer Styles */
+  
+  .footer {
+    background: #f5f5f5;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  .container {
+    width: 85%;
+    margin: auto;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    width: 16%;
+  }
+  .footer-section h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .payment-methods img,
+  .shipping-methods img,
+  .social-icons img {
+    width: 40px;
+    margin: 5px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+ /* Menu Section Styling dengan Tema Anak Ceria */
+.menu {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(135deg, #ffcf33, #ff6f61);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Kontainer Menu */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+/* Item Menu */
+.menu-item {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* Judul Menu */
+.menu-item h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff4081;
+    margin-bottom: 12px;
+}
+
+/* Tombol Ceria */
+.menu-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #ff4081, #ff8a65);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: 0.3s ease-in-out;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover {
+    background: linear-gradient(45deg, #ff8a65, #ff4081);
+    transform: scale(1.1);
+}
+
+/* Animasi Masuk */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-item {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+  
+  /* Media Queries */
+  
+  
+  
+  /* Tablet */
+  @media (max-width: 750px) {
+    html {
+      font-size: 62.5%;
+    }
+  
+    #menu {
+      display: inline-block;
+    }
+  
+    .navbar .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: #fff;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.3s;
+    }
+  
+    .navbar .navbar-nav.active {
+      right: 0;
+    }
+  
+    .navbar .navbar-nav a {
+      color: var(--bg);
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+  
+  
+  
+  /* Mobile Phone */
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+  }
+ /* Lightbox Container */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Lightbox Image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s;
+    object-fit: contain;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* Navigation Controls */
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls span {
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+/* Zoom Controls */
+.zoom-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.zoom-controls button {
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+
+    
+    <!-- Feather Icons Script -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+
+</head>
+<body>
+  <center>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <main class="content">
+            <h1>Koleksi Kaus <span>SHARKO</span></h1>
+            <p>Koleksi ini menampilkan berbagai daftar kaus yang tersedia dari SHARKO</p>
+        </main>
+    </section>
+
+
+   <!-- Galeri Produk -->
+<div class="gallery" id="productGallery">
+    <div class="product-card" onclick="openLightbox(0)">
+        <img src="Sharko Logo Shirt.jpg" alt="Sharko Logo - Dusty Blue">
+        <h3>Sharko Logo - Dusty Blue</h3>
+    </div>
+    <div class="product-card" onclick="openLightbox(1)">
+        <img src="Sharko Logo Shirt Black.jpg" alt="Sharko Logo - Black">
+        <h3>Sharko Logo - Black</h3>
+    </div>
+    <div class="product-card" onclick="openLightbox(2)">
+        <img src="Let's Play In Space Shirt.jpg" alt="Let's Play In Space - Almond Brown">
+        <h3>Let's Play In Space - Almond Brown</h3>
+    </div>
+    <div class="product-card" onclick="openLightbox(3)">
+        <img src="Sharko Logo Shirt Red.jpg" alt="Sharko Logo - Red">
+        <h3>Sharko Logo - Red</h3>
+    </div>
+</div>
+
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+         <div class="product-card" onclick="openLightbox(4)">
+              <img src="Ice Cream Party Shirt.jpg" alt="Kaus SHARKO 5">
+              <h3>Ice Cream Party - Dusty Pink</h3>
+            </div>
+
+          <div class="product-card" onclick="openLightbox(5)">
+              <img src="Sharko Logo Shirt White.jpg" alt="Kaus SHARKO 6">
+              <h3>Sharko Logo - White</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(6)">
+              <img src="Sharko Plain Shirt.jpg" alt="Kaus SHARKO 7">
+              <h3>Sharko Plain - Almond Brown</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(7)">
+              <img src="Bearspace Shirt.jpg" alt="Kaus SHARKO 8">
+              <h3>Bearspace - Dusty Blue</h3>
+          </div>
+      </div>
+  
+  
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+         <div class="product-card" onclick="openLightbox(8)">
+              <img src="Bearspace Shirt Brown.jpg" alt="Kaus SHARKO 9">
+              <h3>Bearspace - Almond Brown</h3>
+          </div>
+
+
+          <div class="product-card" onclick="openLightbox(9)">
+              <img src="Flying Frost Shirt.jpg" alt="Kaus SHARKO 10">
+              <h3>Flying Frost - Almond Brown</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(10)">
+              <img src="Future Machine Shirt.jpg" alt="Kaus SHARKO 11">
+              <h3>Future Machine - Almond Brown</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(11)">
+              <img src="Wild Wolf Shirt.jpg" alt="Kaus SHARKO 12">
+              <h3>Wild Wolf - Almond Brown</h3>
+          </div>
+      </div>
+  
+      
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+         <div class="product-card" onclick="openLightbox(12)">
+              <img src="Wild Wolf Shirt Blue.jpg" alt="Kaus SHARKO 13">
+              <h3>Wild Wolf - Dusty Blue</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(13)">
+              <img src="Sharko Plain Shirt Blue.jpg" alt="Kaus SHARKO 14">
+              <h3>Sharko Plain - Dusty Blue</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(14)">
+              <img src="Sharko Plain Shirt Pink.jpg" alt="Kaus SHARKO 15">
+              <h3>Sharko Plain - Dusty Pink</h3>
+          </div>
+
+          <div class="product-card" onclick="openLightbox(15)">
+              <img src="Dino Land Shirt.jpg" alt="Kaus SHARKO 16">
+              <h3>Dino Land - Almond Brown</h3>
+          </div>
+      </div>
+  
+ 
+      
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+         <div class="product-card" onclick="openLightbox(16)">
+              <img src="Cat In Bag Shirt.jpg" alt="Kaus SHARKO 17">
+              <h3>Cat In Bag - Dusty Blue</h3>
+        </div>
+          <div class="product-card" onclick="openLightbox(17)">
+              <img src="Sharko Logo Brown.jpg" alt="Kaus SHARKO 18">
+              <h3>Sharko Logo - Almond Brown</h3>
+          </div>
+          <div class="product-card" onclick="openLightbox(18)">
+              <img src="Dynamite KABOOM Shirt.jpg" alt="Kaus SHARKO 19">
+              <h3>Dynamite KABOOM - Red</h3>
+          </div>
+          <div class="product-card" onclick="openLightbox(19)">
+              <img src="Born To Be Queen Shirt.jpg" alt="Kaus SHARKO 20">
+              <h3>Born To Be Queen - White</h3>
+          </div>
+      </div>
+ 
+      
+      
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+         <div class="product-card" onclick="openLightbox(20)">
+              <img src="Cat In Bag Shirt White.jpg" alt="Kaus SHARKO 21">
+              <h3>Cat In Bag - White</h3>
+          </div>
+          <div class="product-card" onclick="openLightbox(21)">
+              <img src="Tyrannosaurus Rex Shirt.jpg" alt="Kaus SHARKO 22">
+              <h3>Tyrannosaurus Rex - Black</h3>  
+          </div>
+          <div class="product-card" onclick="openLightbox(22)">
+              <img src="Ice Cream Party Shirt Red.jpg" alt="Kaus SHARKO 23">
+              <h3>Ice Cream Party - Red</h3>
+          </div>
+          <div class="product-card" onclick="openLightbox(23)">
+              <img src="Good Day Surfing Shirt.jpg" alt="Kaus SHARKO 24">
+              <h3>Good Day Surfing - White</h3>
+    </div>
+      </div>
+  
+      
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+         <div class="product-card" onclick="openLightbox(24)">
+              <img src="Classic Riders Shirt.jpg" alt="Kaus SHARKO 25">
+              <h3>Classic Riders - Red</h3>
+          </div>
+          <div class="product-card" onclick="openLightbox(25)">
+              <img src="Future Machine Shirt White.jpg" alt="Kaus SHARKO 26">
+              <h3>Future Machine - White</h3>
+          </div>
+          <div class="product-card" onclick="openLightbox(26)">
+              <img src="Bearspace Shirt Black.jpg" alt="Kaus SHARKO 27">
+              <h3>Bearspace - Black</h3>
+ 
+          </div>
+          <div class="product-card" onclick="openLightbox(27)">
+            <img src="Sunny Quack Shirt.jpg" alt="Kaus SHARKO 28">
+            <h3>Sunny Quack - Dusty Blue</h3>
+        </div>
+      </div>
+  
+      
+     <!-- Galeri Produk -->
+     <div class="gallery" id="productGallery">
+          <div class="product-card" onclick="openLightbox(28)">
+              <img src="Get Lost In Space Shirt.jpg" alt="Kaus SHARKO 29">
+              <h3>Get Lost In Space - Black</h3>
+ 
+          </div>
+      <div class="product-card" onclick="openLightbox(29)">
+         <img src="Scooter Shirt.jpg" alt="Kaus SHARKO 30">
+         <h3>Scooter - Red</h3>
+        
+ 
+     </div>
+ </div>
+
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <div class="controls">
+        <span class="prev" onclick="prevImage()">&#10094;</span>
+        <span class="next" onclick="nextImage()">&#10095;</span>
+    </div>
+    <img id="lightboxImage" src="" alt="">
+    <div class="zoom-controls">
+        <button onclick="zoomIn()">+</button>
+        <button onclick="zoomOut()">-</button>
+    </div>
+</div>
+
+<!-- Menu Section -->
+<section class="menu" id="menu">
+  <div class="menu-container">
+      <div class="menu-item">
+          <h3>Tampilan Awal SHARKO</h3>
+          <a href="index.html" class="menu-button">SHARKO</a>
+      </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Layanan Pelanggan -->
+        <div class="footer-section">
+          <h4>Layanan Pelanggan</h4>
+          <ul>
+            <li><a href="#">Bantuan</a></li>
+            <li><a href="#">Metode Pembayaran</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+            <li><a href="#">Pengembalian & Dana</a></li>
+            <li><a href="#">Garansi SHARKO</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+  
+        <!-- Jelajahi SHARKO -->
+        <div class="footer-section">
+          <h4>Jelajahi SHARKO</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">SHARKO Mall</a></li>
+            <li><a href="#">Flash Sale</a></li>
+          </ul>
+        </div>
+  
+        <!-- Pembayaran -->
+        <div class="footer-section">
+          <h4>Pembayaran</h4>
+          <div class="payment-methods">
+            <img src="BCA Icon.png" alt="BCA">
+            <img src="BNI Icon.png" alt="BNI">
+            <img src="BRI Icon.png" alt="BRI">
+            <img src="Mandiri Icon.png" alt="Mandiri">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 SHARKO. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+<script>
+    let images = []; // Array kosong untuk menyimpan nama gambar secara otomatis
+    
+    // Ambil semua gambar dari galeri dan masukkan ke array images
+    document.querySelectorAll(".product-card img").forEach(img => {
+        images.push(img.src); 
+    });
+    
+    let currentIndex = 0;
+    let zoomLevel = 1;
+    
+    function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+        document.getElementById("lightbox").style.display = "flex";
+    }
+    
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+        resetZoom();
+    }
+    
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightbox();
+    }
+    
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightbox();
+    }
+    
+    function updateLightbox() {
+        let lightboxImage = document.getElementById("lightboxImage");
+        lightboxImage.src = images[currentIndex];
+        lightboxImage.style.transform = `scale(${zoomLevel})`;
+    }
+    
+    function zoomIn() {
+        zoomLevel += 0.2;
+        document.getElementById("lightboxImage").style.transform = `scale(${zoomLevel})`;
+    }
+    
+    function zoomOut() {
+        if (zoomLevel > 0.5) {
+            zoomLevel -= 0.2;
+            document.getElementById("lightboxImage").style.transform = `scale(${zoomLevel})`;
+        }
+    }
+    
+    function resetZoom() {
+        zoomLevel = 1;
+        document.getElementById("lightboxImage").style.transform = "scale(1)";
+    }
+    </script>
+    
+</center>
+</body>
+</html>

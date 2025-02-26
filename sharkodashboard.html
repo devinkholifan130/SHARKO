@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHARKO Dashboard</title>
+    <link rel="website icon" href="SHARKO Logo.jpg" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+       body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fce4ec; /* Warna pink pastel */
+            color: #4a148c; /* Warna ungu ceria */
+        }
+
+        .sidebar {
+            background: #ff80ab; /* Warna pink terang */
+            color: white;
+            width: 250px;
+            min-height: 100vh;
+            padding: 20px;
+            position: fixed;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+
+        .sidebar h3 {
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff59d;
+        }
+
+        .sidebar .nav-link {
+            color: #ffeb3b;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .sidebar .nav-link:hover {
+            background: #ffccbc;
+            border-radius: 10px;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 30px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            background: #fff3e0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6a1b9a;
+        }
+
+        .btn-success {
+            background: #ffeb3b;
+            border: none;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .btn-success:hover {
+            background: #fbc02d;
+        }
+
+        .btn-danger {
+            background: #e57373;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-danger:hover {
+            background: #d32f2f;
+        }
+
+        .alert-warning-coffee {
+            background: #ffcc80;
+            color: #4a148c;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            position: relative;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .warning-icon {
+            margin-right: 8px;
+            font-size: 22px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>SHARKO</h3>
+        <ul class="nav flex-column p-3">
+            <!-- Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#dashboard">
+                    <i class="fa-solid fa-house"></i> Dashboard
+                </a>
+            </li>
+        
+            
+        <!-- Add Data -->
+<li class="nav-item">
+    <a href="sharkoform.html" class="nav-link text-white">
+        <i class="fa-solid fa-plus"></i> Tambah Data
+    </a>
+</li>
+
+<!-- Delete Data -->
+<li class="nav-item">
+    <button class="nav-link text-white ms-2 bg-transparent border-0" onclick="hapusData()">
+        <i class="fa-solid fa-trash"></i> Hapus Data
+    </button>
+</li>
+
+            <!-- Exit -->
+            <li class="nav-item mt-auto">
+                <a class="nav-link text-danger fw-bold" href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i> Exit
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="content" id="dashboard">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Total Kaus Terjual</h5>
+                    <h3 id="displayTotalKaus">0</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Jumlah Uang Dihasilkan</h5>
+                    <h3 id="displayTotalUang">Rp 0</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h5>Periode</h5>
+                    <h3 id="displayPeriode">-</h3>
+                    <small id="displayTanggal"></small> <!-- Menampilkan tanggal -->
+                </div>
+            </div>
+        </div>
+        <div class="alert-warning-coffee">
+            <span class="warning-icon">⚠️</span> 
+            Hanya pihak <strong>SHARKO</strong> yang boleh membuka data pada dashboard!
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <canvas id="kausChart"></canvas>
+            </div>
+                
+            <div class="col-md-6">
+                <canvas id="uangChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        var tempCtx = document.getElementById('temperatureChart').getContext('2d');
+        new Chart(tempCtx, {
+            type: 'line',
+            data: { labels: ['23:50', '23:55', '00:05', '00:10'], datasets: [{ label: 'Temperature', data: [26, 28, 26, 25], borderColor: 'red', fill: false }] }
+        });
+        var humCtx = document.getElementById('humidityChart').getContext('2d');
+        new Chart(humCtx, {
+            type: 'line',
+            data: { labels: ['23:50', '23:55', '00:05', '00:10'], datasets: [{ label: 'Humidity', data: [90, 92, 91, 93], borderColor: 'blue', fill: false }] }
+        });
+    </script>
+
+<script>
+    let salesData = JSON.parse(localStorage.getItem("salesData"));
+
+    if (salesData) {
+        document.getElementById("displayTotalKaus").innerText = salesData.totalKaus;
+        document.getElementById("displayTotalUang").innerText = "Rp " + salesData.totalUang;
+        document.getElementById("displayPeriode").innerText = salesData.periode;
+
+        // Tambahkan tanggal jika ada
+        if (salesData.tanggal) {
+            document.getElementById("displayTanggal").innerText = "Tanggal: " + salesData.tanggal;
+        }
+
+        let ctx1 = document.getElementById('kausChart').getContext('2d');
+        let ctx2 = document.getElementById('uangChart').getContext('2d');
+
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ["Total Kaus"],
+                datasets: [{
+                    label: 'Total Kaus Terjual',
+                    data: [salesData.totalKaus],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+
+
+
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ["Jumlah Uang"],
+                datasets: [{
+                    label: 'Total Uang Dihasilkan',
+                    data: [salesData.totalUang],
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    // Fungsi untuk menghapus data
+    function hapusData() {
+            let konfirmasi = confirm("Apakah Anda yakin ingin menghapus semua data?");
+            if (konfirmasi) {
+                localStorage.removeItem("salesData");
+                alert("Data berhasil dihapus!");
+                location.reload(); // Refresh halaman agar tampilan kembali kosong
+            }
+        }
+</script>
+
+
+</body>
+</html>

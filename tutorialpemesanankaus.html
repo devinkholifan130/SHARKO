@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Pemesanan Kaus SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            background-color: #ffeb3b; /* Warna kuning cerah */
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+        }
+        h2 {
+            font-weight: bold;
+            color: #ff5722; /* Warna oranye ceria */
+            text-shadow: 2px 2px #fff;
+        }
+        .step-card {
+            background: #fff;
+            color: #4CAF50; /* Warna hijau ceria */
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .step-card:hover {
+            transform: scale(1.05);
+        }
+        .step-number {
+            background: #ff9800; /* Warna oranye cerah */
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        /* Menu Section Styling */
+        .menu {
+            text-align: center;
+            padding: 40px 0;
+            background: #ff5722; /* Warna oranye cerah */
+            border-radius: 10px;
+        }
+        .menu h3 {
+            color: white;
+            font-weight: bold;
+        }
+        .menu-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #4CAF50; 
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+        }
+        .menu-button:hover {
+            background-color: #388E3C; /* Warna hijau lebih gelap saat hover */
+        }
+
+        /* Animasi GSAP */
+        .emoji {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 750px) {
+            html {
+                font-size: 90%;
+            }
+        }
+        @media (max-width: 450px) {
+            html {
+                font-size: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">✨ Tutorial Pemesanan Kaus di SHARKO ✨</h2>
+        
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="step-card d-flex align-items-center" id="step1">
+                    <div class="step-number">1</div>
+                    <div class="step-content ms-3">
+                        <h5>Pilih kaus favorit Anda 🛍️</h5>
+                        <p>Kunjungi <a href="galerikaussharko.html" style="text-decoration: none; color: #ff5722;">Galeri Kaus SHARKO</a>.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card d-flex align-items-center" id="step2">
+                    <div class="step-number">2</div>
+                    <div class="step-content ms-3">
+                        <h5>Sesuaikan pesanan 🎨</h5>
+                        <p>Pilih ukuran dan warna favorit Anda!</p>
+                    </div>
+                </div>
+                
+                <div class="step-card d-flex align-items-center" id="step3">
+                    <div class="step-number">3</div>
+                    <div class="step-content ms-3">
+                        <h5>Menentukan jumlah kaus & metode pembayaran 💰</h5>
+                        <p>Tentukan jumlah kaus yang Anda pesan dan pilih metode pembayaran.</p>
+                    </div>
+                </div>
+
+                <div class="step-card d-flex align-items-center" id="step4">
+                    <div class="step-number">4</div>
+                    <div class="step-content ms-3">
+                        <h5>Checkout via WhatsApp 📲</h5>
+                        <p>Klik tombol checkout untuk menghubungi admin kami melalui WhatsApp.</p>
+                    </div>
+                </div>
+                
+                <div class="step-card d-flex align-items-center" id="step5">
+                    <div class="step-number">5</div>
+                    <div class="step-content ms-3">
+                        <h5>Nikmati kenyamanan kaus Anda! 😊</h5>
+                        <p>Pesanan Anda segera dikirim. Selamat menikmati! 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="menu-container">
+            <h3>SHARKO</h3>
+            <a href="index.html" class="menu-button">Kembali ke Home</a>
+        </div>
+    </section>
+    
+    <script>
+        gsap.from(".step-card", { 
+            opacity: 0, 
+            y: 50, 
+            duration: 1, 
+            stagger: 0.3 
+        });
+    </script>
+    
+</body>
+</html>

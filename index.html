@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHARKO Online Children T-Shirt Shopping Website</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <!-- Coffee Style Style -->
+      <style>
+   /* Body Color */
+   :root {
+    --primary: #fded0e;
+    --secondary: #ff7cc4;
+    --tertiary: #0b4bfd;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+    color: white;
+  }
+  /* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('SHARKO Wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(255, 204, 0, 1) 10%, rgba(255, 255, 255, 0) 50%);
+}
+
+.hero .content {
+    padding: 2rem 8%;
+    max-width: 60rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.hero .content h1 {
+    font-size: 3.5rem;
+    color: #ff4081;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Comic Sans MS', cursive;
+    line-height: 1.2;
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #ff9800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol dengan gaya anak-anak */
+.hero .content .cta,
+.hero .content .cta2,
+.hero .content .cta3 {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero .content .cta { background-color: #03a9f4; color: white; }
+.hero .content .cta2 { background-color: #ffeb3b; color: black; }
+.hero .content .cta3 { background-color: #8bc34a; color: white; }
+
+.hero .content .cta:hover,
+.hero .content .cta2:hover,
+.hero .content .cta3:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar dengan warna cerah dan animasi */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 7%;
+    background-color: #ffcc00;
+    border-bottom: 3px solid #ff9800;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 193, 7, 0.9);
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #03a9f4;
+    font-family: 'Comic Sans MS', cursive;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .navbar-logo:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar .navbar-nav a {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar .navbar-nav a:hover {
+    background: #ff9800;
+    color: white;
+}
+
+/* Animasi muncul saat scroll */
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar {
+    animation: fadeSlideDown 0.5s ease-in-out;
+}
+
+
+.price {
+            padding: 40px 20px;
+            background: #ffebf5;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 700px;
+            box-shadow: 0px 10px 15px rgba(255, 20, 147, 0.2);
+            border: 3px dashed #ff1493;
+        }
+
+        .price h2 {
+            font-size: 28px;
+            color: #ff1493;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .price-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .price-list li {
+            font-size: 20px;
+            color: #ff4da6;
+            font-weight: 500;
+            margin: 8px 0;
+        }
+/* About Styling */
+.about {
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #ff9ff3, #feca57);
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Heading Styling */
+.about h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about h2 span {
+    color: #ff4757;
+}
+
+/* Flexbox Styling for Row */
+.about .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Image Styling */
+.about .about-img {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.about .about-img img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about .about-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Content Styling */
+.about .content {
+    flex: 1 1 50%;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #ff4757;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.about .content p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .about .row {
+        flex-direction: column;
+    }
+
+    .about .about-img, .about .content {
+        flex: 1 1 100%;
+    }
+}
+
+        .footer {
+    background: #f5f5f5;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  .container {
+    width: 85%;
+    margin: auto;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-section {
+    width: 16%;
+  }
+  .footer-section h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 5px 0;
+  }
+  .footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .payment-methods img,
+  .shipping-methods img,
+  .social-icons img {
+    width: 40px;
+    margin: 5px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+ 
+/* ========== SECTION PROMO (TEMA CERIA) ========== */
+.promo {
+    background: linear-gradient(135deg, #FFD700, #FF69B4); /* Warna ceria: emas ke pink */
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.promo-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promo h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF4500; /* Warna merah cerah */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.promo-text {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.text-success {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #32CD32; /* Hijau cerah */
+}
+
+.promo-img {
+    max-width: 250px;
+    border-radius: 10px;
+    animation: floatAnimation 3s infinite ease-in-out;
+}
+
+/* Efek animasi mengambang */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+
+  
+  /* Media Queries */
+  
+  
+  /* Laptop */
+  @media (max-width: 1366px) {
+    html {
+      font-size: 75%;
+    }
+  }
+  
+  
+  /* Tablet */
+  @media (max-width: 750px) {
+    html {
+      font-size: 62.5%;
+    }
+  
+    #menu {
+      display: inline-block;
+    }
+  
+    .navbar .navbar-nav {
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      background-color: #fff;
+      width: 30rem;
+      height: 100vh;
+      transition: 0.3s;
+    }
+  
+    .navbar .navbar-nav.active {
+      right: 0;
+    }
+  
+    .navbar .navbar-nav a {
+      color: var(--bg);
+      display: block;
+      margin: 1.5rem;
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+  
+  
+  
+  /* Mobile Phone */
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+  }
+        </style>
+    <!-- Website Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,
+    200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons Script -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+ <!-- Navbar -->
+<nav class="navbar">
+  <a href="#" class="navbar-logo">SHARKO</a>
+
+  <div class="navbar-nav">
+    <a href="#home">Home</a>
+    <a href="#price">Harga Kaus</a>
+    <a href="#about">Tentang SHARKO</a>
+    <a href="koleksikaussharko.html">Koleksi Kaus Anak</a>
+    <a href="sharkodashboard.html">SHARKO Dashboard</a>
+    <a href="tutorialpemesanankaus.html">Tutorial Pemesanan Kaus</a>
+  </div>
+
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <main class="content">
+    <h1>SHARKO</h1>
+    <p>Menyediakan berbagai kaus anak terbaik dengan kualitas dan harga terjangkau</p>
+    <a href="galerikaussharko.html" class="cta">Beli Sekarang</a>
+    <a href="daftarkaussharko.html" class="cta2">Daftar Kaus</a>
+  </main>
+
+</section>
+
+<section id="promo" class="promo">
+  <div class="promo-banner">
+      <div>
+          <h2 class="text-danger">SHARKO</h2>
+          <p class="promo-text">Belanja lebih hemat dan nyaman dengan Sharko!</p>
+          <p class="text-success fw-bold">Diskon hingga 50%*</p>
+      </div>
+      <img src="SHARKO Logo.jpg" alt="Produk Sharko" class="promo-img">
+  </div>
+</section>
+
+<section id="price" class="price">
+    <h2>Harga Kaus Anak SHARKO</h2>
+    <ul class="price-list">
+        <li>1 PCS: Rp. 50.000,00</li>
+        <li>3 PCS: Rp. 150.000,00</li>
+        <li>5 PCS: Rp. 250.000,00</li>
+        <li>10 PCS: Rp. 500.000,00</li>
+    </ul>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="about">
+  <h2>Tentang <span>SHARKO</span></h2>
+
+  <div class="row">
+    <div class="about-img">
+      <img src="SHARKO Wallpaper.jpg" alt="Tentang SHARKO">
+    </div>
+    <div class="content">
+      <h3>Mengapa Anda tertarik dengan SHARKO?</h3>
+      <p>SHARKO dari SETYOWATI GROUP, menyediakan kaus-kaus lokal khusus anak-anak dengan desain yang ceria.    </p>
+      <p>Segeralah membeli kaus-kaus anak dari brand SHARKO sebelum kehabisan!    </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Layanan Pelanggan -->
+        <div class="footer-section">
+          <h4>Layanan Pelanggan</h4>
+          <ul>
+            <li><a href="#">Bantuan</a></li>
+            <li><a href="#">Metode Pembayaran</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+            <li><a href="#">Pengembalian & Dana</a></li>
+            <li><a href="#">Garansi SHARKO</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+  
+        <!-- Jelajahi SHARKO -->
+        <div class="footer-section">
+          <h4>Jelajahi SHARKO</h4>
+          <ul>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Karir</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">SHARKO Mall</a></li>
+            <li><a href="#">Flash Sale</a></li>
+          </ul>
+        </div>
+  
+        <!-- Pembayaran -->
+        <div class="footer-section">
+          <h4>Pembayaran</h4>
+          <div class="payment-methods">
+            <img src="BCA Icon.png" alt="BCA">
+            <img src="BNI Icon.png" alt="BNI">
+            <img src="BRI Icon.png" alt="BRI">
+            <img src="Mandiri Icon.png" alt="Mandiri">
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 SHARKO. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const searchBox = document.getElementById("searchBox");
+    const searchDropdown = document.getElementById("searchDropdown");
+
+    searchBox.addEventListener("focus", function () {
+        searchDropdown.style.display = "flex";
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!searchBox.contains(event.target) && !searchDropdown.contains(event.target)) {
+            searchDropdown.style.display = "none";
+        }
+    });
+});
+
+  </script>
+
+  <script>
+    // Ambil elemen-elemen yang dibutuhkan
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBox = document.getElementById("searchBox");
+    const searchDropdown = document.getElementById("searchDropdown");
+    const searchResults = document.getElementById("searchResults");
+    const clearSearch = document.getElementById("clearSearch");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    // Fungsi untuk menampilkan hasil pencarian
+    function searchProducts(query) {
+        let found = false;
+        galleryItems.forEach(item => {
+            const title = item.querySelector("h3").textContent.toLowerCase();
+            if (title.includes(query.toLowerCase())) {
+                item.style.display = "block";
+                found = true;
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        if (!found) {
+            searchResults.innerHTML = `<li>Tidak ditemukan</li>`;
+        }
+    }
+
+    // Simpan riwayat pencarian di localStorage
+    function saveSearchHistory(query) {
+        let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+        if (!history.includes(query)) {
+            history.unshift(query);
+            if (history.length > 5) history.pop(); // Simpan maksimal 5 riwayat
+            localStorage.setItem("searchHistory", JSON.stringify(history));
+        }
+        updateSearchHistory();
+    }
+
+    // Perbarui dropdown riwayat pencarian
+    function updateSearchHistory() {
+        let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+        searchResults.innerHTML = history.length > 0 
+            ? history.map(term => `<li class="search-item">${term}</li>`).join("") 
+            : '<li>👀</li>';
+    }
+
+    // Hapus seluruh riwayat pencarian
+    clearSearch.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("searchHistory");
+        updateSearchHistory();
+    });
+
+    // Event saat mengetik di search box
+    searchBox.addEventListener("input", () => {
+        const query = searchBox.value.trim();
+        if (query) {
+            searchDropdown.style.display = "block";
+            searchProducts(query);
+        } else {
+            searchDropdown.style.display = "none";
+            galleryItems.forEach(item => item.style.display = "block");
+        }
+    });
+
+    // Simpan pencarian saat enter ditekan
+    searchBox.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            const query = searchBox.value.trim();
+            if (query) {
+                saveSearchHistory(query);
+            }
+        }
+    });
+
+    // Klik pada riwayat pencarian untuk melakukan pencarian ulang
+    searchResults.addEventListener("click", (e) => {
+        if (e.target.classList.contains("search-item")) {
+            searchBox.value = e.target.textContent;
+            searchProducts(e.target.textContent);
+        }
+    });
+
+    // Muat riwayat pencarian saat halaman dibuka
+    updateSearchHistory();
+});
+
+  </script>
+
+<script>
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let searchResults = document.getElementById("searchResults");
+    let searchBox = document.getElementById("searchBox");
+
+    searchResults.addEventListener("click", function (event) {
+        event.preventDefault(); // Mencegah tindakan default
+        let gallerySection = document.getElementById("gallery");
+        if (gallerySection) {
+            gallerySection.scrollIntoView({ behavior: "smooth" }); // Animasi scroll
+        }
+    });
+});
+
+</script>
+  </body>
+</html>

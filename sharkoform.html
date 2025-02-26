@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Penjualan - SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffcc70, #ff758f, #c1e1c1);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            background: #fff8dc;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+            border: 5px dashed #ff758f;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ff6f61;
+            text-align: center;
+        }
+
+        p.text-danger {
+            color: #ff4081 !important;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            background: #fce4ec;
+            border: 2px solid #ff6f61;
+            color: #333;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            background: #fff;
+            border: 3px solid #ff4081;
+            box-shadow: none;
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        .btn-warning {
+            background: #ffcc29;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .btn-warning:hover {
+            background: #ffb400;
+        }
+
+        .btn-success {
+            background: #4caf50;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .btn-success:hover {
+            background: #388e3c;
+        }
+
+        /* Tambahan Elemen Dekoratif */
+        .emoji {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Tambah Data Penjualan ☕🌟</h2>
+        <p class="text-danger">Hanya pihak SHARKO yang boleh mengisi form ini! 🚀</p>
+        <a href="sharkodashboard.html" class="btn btn-warning w-100">🔙 Keluar Dari Form</a>
+
+        <form id="salesForm">
+            <div class="mb-3">
+                <label class="form-label">Total Kaus Terjual ☕</label>
+                <input type="number" id="totalKaus" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Jumlah Uang Dihasilkan 💰 (Rp)</label>
+                <input type="number" id="totalUang" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Periode 🗓️</label>
+                <select id="periode" class="form-control">
+                    <option value="Harian">Harian</option>
+                    <option value="Bulanan">Bulanan</option>
+                    <option value="Tahunan">Tahunan</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Pilih Tanggal 📆</label>
+                <input type="date" class="form-control" id="tanggal" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">✅ Tambah Data</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("salesForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let totalKaus = document.getElementById("totalKaus").value;
+            let totalUang = document.getElementById("totalUang").value;
+            let periode = document.getElementById("periode").value;
+            let tanggal = document.getElementById("tanggal").value;
+
+            let salesData = {
+                totalKaus: totalKaus,
+                totalUang: totalUang,
+                periode: periode,
+                tanggal: tanggal
+            };
+
+            localStorage.setItem("salesData", JSON.stringify(salesData));
+
+            window.location.href = "sharkodashboard.html";
+        });
+    </script>
+</body>
+</html>

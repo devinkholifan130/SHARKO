@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kaus Anak SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+  /* Reset dasar */
+body {
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffbcc; /* Warna cerah kekuningan */
+    color: #444;
+}
+
+/* ========== NAVBAR STYLE ========== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 7%;
+    background: linear-gradient(to right, #ff6ec4, #7873f5);
+    border-bottom: 3px solid #ff4a4a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+    background: linear-gradient(to right, #ff9a8b, #ff6ec4);
+    padding: 1rem 7%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffeb3b;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .navbar-logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar .navbar-nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .navbar-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #ffeb3b;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar .navbar-nav a:hover {
+    color: #ffeb3b;
+}
+
+.navbar .navbar-nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* ========== SEARCH BAR STYLE ========== */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    padding: 8px 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    border: 3px solid #ff9800;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 8px;
+    flex-grow: 1;
+    color: #ff9800;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #ff9800;
+}
+
+/* ========== HEADER STYLE ========== */
+header {
+    background: linear-gradient(to right, #ff6ec4, #ffcc00);
+    padding: 30px;
+    color: white;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 80px;
+    border-radius: 0px 0px 25px 25px;
+}
+
+/* ========== GALLERY STYLE ========== */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 25px;
+}
+
+/* Kartu Produk */
+.product-card {
+    background: white;
+    width: 240px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    border: 3px solid #ff6ec4;
+}
+
+.product-card:hover {
+    transform: scale(1.07);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 12px 0;
+    color: #ff4081;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff5722;
+    margin-bottom: 12px;
+}
+
+/* Tombol Beli Sekarang */
+.btn-buy {
+    display: block;
+    text-align: center;
+    background: #ff9800;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-buy:hover {
+    background: #ff4081;
+}
+
+/* Rating */
+.rating {
+    color: #ffeb3b;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* ========== MENU STYLE ========== */
+.menu {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    text-align: center;
+    width: 260px;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4081;
+    margin-bottom: 12px;
+}
+
+.menu-button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #ff6ec4;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+    background-color: #ff4081;
+}
+
+/* Animasi Smooth Scroll */
+body {
+    scroll-behavior: smooth;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet */
+@media (max-width: 750px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: white;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+        border-top: 4px solid #ff6ec4;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: #ff6ec4;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+    </style>
+</head>
+<body>
+  
+    <!-- Header -->
+    <header>
+        <h1>Galeri Kaus Anak SHARKO</h1>
+    </header>
+
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+       <div class="product-card">
+            <img src="Sharko Logo Shirt.jpg" alt="Kaus SHARKO 1">
+            <h3>Sharko Logo - Dusty Blue</h3>
+            <p class="price">Rp50.000,00, -</p>
+            <div class="rating">★★★★★</div>
+            <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Sharko Logo - Dusty Blue" 
+               data-price="50000"
+                data-image="Sharko Logo Shirt.jpg"
+                style="cursor: pointer;"></i>
+
+        </div>
+        <div class="product-card">
+            <img src="Sharko Logo Shirt Black.jpg" alt="Kaus SHARKO 2">
+            <h3>Sharko Logo - Black</h3>
+            <p class="price">Rp50.000,00, -</p>
+            <div class="rating">★★★★★</div>
+
+            <i data-feather="shopping-cart" 
+            class="addToCart" 
+             data-name="Sharko Logo - Black" 
+             data-price="50000" 
+             data-image="Sharko Logo Shirt Black.jpg"
+             style="cursor: pointer;"></i>
+
+        </div>
+        <div class="product-card">
+            <img src="Let's Play In Space Shirt.jpg" alt="Kaus SHARKO 3">
+            <h3>Let's Play In Space - Almond Brown</h3>
+            <p class="price">Rp50.000,00, -</p>
+            <div class="rating">★★★★★</div>
+            <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Let's Play In Space - Almond Brown" 
+               data-price="50000" 
+               data-image="Let's Play In Space Shirt.jpg"
+               style="cursor: pointer;"></i>
+
+        </div>
+        <div class="product-card">
+            <img src="Sharko Logo Shirt Red.jpg" alt="Kaus SHARKO 4">
+            <h3>Sharko Logo - Red</h3>
+            <p class="price">Rp50.000,00, -</p>
+            <div class="rating">★★★★★</div>
+            <i data-feather="shopping-cart" 
+            class="addToCart" 
+             data-name="Sharko Logo - Red" 
+             data-price="50000" 
+             data-image="Sharko Logo Shirt Red.jpg"
+             style="cursor: pointer;"></i>
+
+        </div>
+    </div>
+
+
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+        <div class="product-card">
+             <img src="Ice Cream Party Shirt.jpg" alt="Kaus SHARKO 5">
+             <h3>Ice Cream Party - Dusty Pink</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Ice Creamy Party - Dusty Pink" 
+              data-price="50000" 
+              data-image="Ice Cream Party Shirt.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Sharko Logo Shirt White.jpg" alt="Kaus SHARKO 6">
+             <h3>Sharko Logo - White</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Sharko Logo - White" 
+               data-price="50000" 
+               data-image="Sharko Logo Shirt White.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Sharko Plain Shirt.jpg" alt="Kaus SHARKO 7">
+             <h3>Sharko Plain - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Sharko Plain - Almond Brown" 
+               data-price="50000" 
+               data-image="Sharko Plain Shirt.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Bearspace Shirt.jpg" alt="Kaus SHARKO 8">
+             <h3>Bearspace - Dusty Blue</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Bearspace - Dusty Blue" 
+              data-price="50000" 
+              data-image="Bearspace Shirt.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+     </div>
+ 
+ 
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+        <div class="product-card">
+             <img src="Bearspace Shirt Brown.jpg" alt="Kaus SHARKO 9">
+             <h3>Bearspace - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Bearspace - Almond Brown" 
+               data-price="50000" 
+               data-image="Bearspace Shirt Pink.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Flying Frost Shirt.jpg" alt="Kaus SHARKO 10">
+             <h3>Flying Frost - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Flying Frost - Allmond Brown" 
+              data-price="50000"
+               data-image="Bearspace Shirt Brown.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Future Machine Shirt.jpg" alt="Kaus SHARKO 11">
+             <h3>Future Machine - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Future Machine - Almond Brown" 
+              data-price="50000"
+               data-image="Future Machine Shirt.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Wild Wolf Shirt.jpg" alt="Kaus SHARKO 12">
+             <h3>Wild Wolf - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Wild Wolf - Almond Brown"
+                data-price="50000" 
+                data-image="Wild Wolf Shirt.jpg"
+                style="cursor: pointer;"></i>
+
+         </div>
+     </div>
+ 
+     
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+        <div class="product-card">
+             <img src="Wild Wolf Shirt Blue.jpg" alt="Kaus SHARKO 13">
+             <h3>Wild Wolf - Dusty Blue</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Wild Wolf - Dusty Blue" 
+               data-price="50000" 
+               data-image="Wild Wolf Shirt Blue.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Sharko Plain Shirt Blue.jpg" alt="Kaus SHARKO 14">
+             <h3>Sharko Plain - Dusty Blue</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Sharko Plain - Dusty Blue" 
+              data-price="50000"
+               data-image="Sharko Plain Shirt Blue.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Sharko Plain Shirt Pink.jpg" alt="Kaus SHARKO 15">
+             <h3>Sharko Plain - Dusty Pink</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Sharko Plain - Dusty Pink" 
+               data-price="50000" 
+               data-image="Sharko Plain Shirt Pink.jpg"
+               style="cursor: pointer;"></i>
+         </div>
+         <div class="product-card">
+             <img src="Dino Land Shirt.jpg" alt="Kaus SHARKO 16">
+             <h3>Dino Land - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Dino Land - Cokelat"
+               data-price="50000"
+                data-image="Dino Land Shirt.jpg"
+                style="cursor: pointer;"></i>
+
+         </div>
+     </div>
+ 
+
+     
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+        <div class="product-card">
+             <img src="Cat In Bag Shirt.jpg" alt="Kaus SHARKO 17">
+             <h3>Cat In Bag - Dusty Blue</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+              <i data-feather="shopping-cart" 
+              class="addToCart" 
+              data-name="Cat In Bag - Dusty Blue" 
+              data-price="50000" 
+              data-image="Cat In Bag Shirt.jpg" 
+              style="cursor: pointer;"></i>
+                     </div>
+         <div class="product-card">
+             <img src="Sharko Logo Brown.jpg" alt="Kaus SHARKO 18">
+             <h3>Sharko Logo - Almond Brown</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+              class="addToCart" 
+               data-name="Sharko Logo - ALmond Brown"
+                data-price="50000" 
+                data-image="Sharko Logo Brown.jpg"
+                style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Dynamite KABOOM Shirt.jpg" alt="Kaus SHARKO 19">
+             <h3>Dynamite KABOOM - Red</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+             data-name="Dynamite KABOOM - Red" 
+             data-price="50000" 
+             data-image="Dynamite KABOOM.jpg"
+             style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Born To Be Queen Shirt.jpg" alt="Kaus SHARKO 20">
+             <h3>Born To Be Queen - White</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Born To Be Queen - White"
+               data-price="50000" data-image="Born To Be Queen.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+     </div>
+
+     
+     
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+        <div class="product-card">
+             <img src="Cat In Bag Shirt White.jpg" alt="Kaus SHARKO 21">
+             <h3>Cat In Bag - White</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+             data-name="Cat In Bag - White Pink"
+              data-price="50000" 
+              data-image="Cat In Bag Shirt White.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Tyrannosaurus Rex Shirt.jpg" alt="Kaus SHARKO 22">
+             <h3>Tyrannosaurus Rex - Black</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Tyrannosaurus Rex - Black"
+               data-price="50000" 
+               data-image="Tyrannosaurus Rex Shirt.jpg"          
+              style="cursor: pointer;"></i>
+
+            
+         </div>
+         <div class="product-card">
+             <img src="Ice Cream Party Shirt Red.jpg" alt="Kaus SHARKO 23">
+             <h3>Ice Cream Party - Red</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Ice Cream Party - Red" 
+              data-price="50000" 
+              data-image="Ice Cream Party Shirt Red.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Good Day Surfing Shirt.jpg" alt="Kaus SHARKO 24">
+             <h3>Good Day Surfing - White</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Good Day Surfing Shirt - White" 
+              data-price="50000" 
+              data-image="Good Day Surfing.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+     </div>
+ 
+     
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+        <div class="product-card">
+             <img src="Classic Riders Shirt.jpg" alt="Kaus SHARKO 25">
+             <h3>Classic Riders - Red</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Classic Riders - Red" 
+              data-price="50000" 
+              data-image="Classic Riders Shirt.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Future Machine Shirt White.jpg" alt="Kaus SHARKO 26">
+             <h3>Future Machine - White</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Future Machine - White" 
+              data-price="50000"
+               data-image="Future Machine Shirt White.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+             <img src="Bearspace Shirt Black.jpg" alt="Kaus SHARKO 27">
+             <h3>Bearspace - Black</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart" 
+              data-name="Bearspace - Black" 
+              data-price="50000"
+               data-image="Bearspace Shirt Black.jpg"
+               style="cursor: pointer;"></i>
+
+         </div>
+         <div class="product-card">
+            <img src="Sunny Quack Shirt.jpg" alt="Kaus SHARKO 28">
+            <h3>Sunny Quack - Dusty Blue</h3>
+            <p class="price">Rp50.000,00, -</p>
+            <div class="rating">★★★★★</div>
+            <i data-feather="shopping-cart" 
+            class="addToCart"
+             data-name="Sunny Quack - Dusty Blue" 
+             data-price="50000" 
+             data-image="Sunny Quack Shirt.jpg"
+             style="cursor: pointer;"></i>
+        </div>
+     </div>
+ 
+     
+    <!-- Galeri Produk -->
+    <div class="gallery" id="productGallery">
+         <div class="product-card">
+             <img src="Get Lost In Space Shirt.jpg" alt="Kaus SHARKO 29">
+             <h3>Get Lost In Space - Black</h3>
+             <p class="price">Rp50.000,00, -</p>
+             <div class="rating">★★★★★</div>
+             <i data-feather="shopping-cart" 
+             class="addToCart"
+              data-name="Get Lost In Space - Black" 
+              data-price="50000" 
+              data-image="Get Lost In Space Shirt.jpg"
+              style="cursor: pointer;"></i>
+
+         </div>
+
+     <div class="product-card">
+        <img src="Scooter Shirt.jpg" alt="Kaus SHARKO 30">
+        <h3>Scooter - Red</h3>
+        <p class="price">Rp50.000,00, -</p>
+        <div class="rating">★★★★★</div>
+        <i data-feather="shopping-cart" 
+        class="addToCart"
+         data-name="Scooter - Red" 
+         data-price="50000" 
+         data-image="Scooter Shirt.jpg"
+         style="cursor: pointer;"></i>
+
+    </div>
+</div>
+ 
+    
+<!-- Menu Section -->
+<section class="menu" id="menu">
+    <div class="menu-container">
+        <div class="menu-item">
+            <h3>SHARKO Interface</h3>
+            <a href="index.html" class="menu-button">SHARKO</a>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cartButtons = document.querySelectorAll(".addToCart");
+
+        cartButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const name = this.getAttribute("data-name");
+                const price = parseInt(this.getAttribute("data-price"));
+                const image = this.getAttribute("data-image");
+
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                
+                // Periksa apakah produk sudah ada di keranjang
+                let existingProduct = cart.find(item => item.name === name);
+
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+
+                // Simpan kembali ke localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+                alert(name + " telah ditambahkan ke keranjang!");
+
+                // Redirect ke halaman keranjang (jika ingin langsung ke keranjang)
+                window.location.href = "keranjangkaussharko.html";
+            });
+        });
+    });
+</script>
+
+<script>
+    feather.replace();
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBox = document.getElementById("searchBox");
+    const searchDropdown = document.getElementById("searchDropdown");
+    const searchResults = document.getElementById("searchResults");
+    const clearSearch = document.getElementById("clearSearch");
+    const galleryItems = document.querySelectorAll(".gallery .product-card"); // Ambil semua produk
+
+    // Fungsi untuk menampilkan hasil pencarian
+    function searchProducts(query) {
+        let found = false;
+        galleryItems.forEach(item => {
+            const title = item.querySelector("h3").textContent.toLowerCase();
+            if (title.includes(query.toLowerCase())) {
+                item.style.display = "block";
+                found = true;
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        if (!found) {
+            searchResults.innerHTML = `<li>Tidak ditemukan</li>`;
+        }
+    }
+
+    // Fungsi untuk menyimpan riwayat pencarian
+    function saveSearchHistory(query) {
+        let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+        if (!history.includes(query)) {
+            history.unshift(query);
+            if (history.length > 5) history.pop();
+            localStorage.setItem("searchHistory", JSON.stringify(history));
+        }
+        updateSearchHistory();
+    }
+
+    // Fungsi untuk memperbarui dropdown riwayat pencarian
+    function updateSearchHistory() {
+        let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+        searchResults.innerHTML = history.length > 0
+            ? history.map(term => `<li class="search-item">${term}</li>`).join("")
+            : '<li>👀</li>';
+    }
+
+    // Event saat mengetik di search box
+    searchBox.addEventListener("input", () => {
+        const query = searchBox.value.trim();
+        if (query) {
+            searchDropdown.style.display = "block";
+            searchProducts(query);
+        } else {
+            searchDropdown.style.display = "none";
+            galleryItems.forEach(item => item.style.display = "block");
+        }
+    });
+
+    // Simpan pencarian saat enter ditekan
+    searchBox.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            const query = searchBox.value.trim();
+            if (query) {
+                saveSearchHistory(query);
+            }
+        }
+    });
+
+    // Klik pada riwayat pencarian untuk melakukan pencarian ulang
+    searchResults.addEventListener("click", (e) => {
+        if (e.target.classList.contains("search-item")) {
+            searchBox.value = e.target.textContent;
+            searchProducts(e.target.textContent);
+        }
+    });
+
+    // Hapus seluruh riwayat pencarian
+    clearSearch.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("searchHistory");
+        updateSearchHistory();
+    });
+
+    // Scroll ke galeri saat klik hasil pencarian
+    searchResults.addEventListener("click", (event) => {
+        event.preventDefault();
+        let gallerySection = document.querySelector(".gallery");
+        if (gallerySection) {
+            gallerySection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+
+    // Muat riwayat pencarian saat halaman dibuka
+    updateSearchHistory();
+});
+
+// Efek navbar saat scroll
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
+</body>
+</html>

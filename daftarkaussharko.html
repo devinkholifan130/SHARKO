@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Kaus SHARKO</title>
+    <link rel="website icon" href="SHARKO Logo.jpg">
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            color: #444;
+            background-color: #ffebc9;
+            margin: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: url('SHARKO Wallpaper.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Overlay warna-warni */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 174, 66, 0.6);
+            z-index: 1;
+        }
+
+        /* Animasi Balon */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1.5s ease-out forwards, float 3s infinite ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero .content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 3px 2px #ff4d6d;
+        }
+
+        .hero .content h1 span {
+            color: #ff4d6d;
+        }
+
+        .hero .content p {
+            font-size: 1.5rem;
+        }
+
+      /* Tabel Harga Kaus */
+      .shirt-list {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffdee9;
+        }
+
+        .shirt-list h2 {
+            font-size: 2rem;
+            color: #ff007f;
+            font-weight: bold;
+        }
+
+        .sharko-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sharko-table th, .sharko-table td {
+            padding: 15px;
+            font-size: 18px;
+            border: 1px solid #ff4d6d;
+            text-align: center;
+        }
+
+        .sharko-table th {
+            background-color: #ff7eb3;
+            color: white;
+        }
+
+        .sharko-table tr:hover {
+            background-color: #ffb6c1;
+            transition: 0.3s;
+        }
+
+        .shirt-img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Tombol Menu */
+        .menu {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            text-align: center;
+            width: 250px;
+        }
+
+        .menu-item h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff4d6d;
+        }
+
+        .menu-button {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #ff6b81;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-button:hover {
+            background-color: #ff4d6d;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <!-- Hero Section -->
+    <section class="hero">
+        <main class="content">
+            <h1>Daftar <span>Harga Kaus</span></h1>
+            <p>Daftar harga dari kaus brand SHARKO</p>
+        </main>
+    </section>
+
+    <section class="shirt-list">
+        <h2>Harga <span>Kaus</span></h2>
+        <table class="sharko-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Foto Kaus</th>
+                    <th>Nama Kaus</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="Sharko Logo Collection.jpg" alt="Sharko Logo" class="shirt-img"></td>
+                    <td>Sharko Logo</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><img src="Let's Play In Space Shirt.jpg" alt="Let's Play In Space" class="shirt-img"></td>
+                    <td>Let's Play In Space</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><img src="Ice Cream Party Collection.jpg" alt="Ice Cream Party" class="shirt-img"></td>
+                    <td>Ice Cream Party</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><img src="Bearspace Collection.jpg" alt="Bearspace" class="shirt-img"></td>
+                    <td>Bearspace</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><img src="Sunny Quack Shirt.jpg" alt="Sunny Quack" class="shirt-img"></td>
+                    <td>Sunny Quack</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><img src="Sharko Plain Collection.jpg" alt="Sharko Plain" class="shirt-img"></td>
+                    <td>Sharko Plain</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><img src="Flying Frost Shirt.jpg" alt="Flying Frost" class="shirt-img"></td>
+                    <td>Flying Frost</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><img src="Future Machine Collection.jpg" alt="Future Machine" class="shirt-img"></td>
+                    <td>Future Machine</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><img src="Wild Wolf Collection.jpg" alt="Wild Wolf" class="shirt-img"></td>
+                    <td>Wild Wolf</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><img src="Dino Land Shirt.jpg" alt="Dino Land" class="shirt-img"></td>
+                    <td>Dino Land</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td><img src="Cat In Bag Collection.jpg" alt="Cat In Bag" class="shirt-img"></td>
+                    <td>Cat In Bag</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td><img src="Dynamite KABOOM Shirt.jpg" alt="Dynamite KABOOM" class="shirt-img"></td>
+                    <td>Dynamite KABOOM</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td><img src="Born To Be Queen Shirt.jpg" alt="Born To Be Queen" class="shirt-img"></td>
+                    <td>Born To Be Queen</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td><img src="Tyrannosaurus Rex Shirt.jpg" alt="Tyrannosaurus Rex" class="shirt-img"></td>
+                    <td>Tyrannosaurus Rex</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td><img src="Good Day Surfing Shirt.jpg" alt="Good Day Surfing" class="shirt-img"></td>
+                    <td>Good Day Surfing</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td><img src="Classic Riders Shirt.jpg" alt="Classic Riders" class="shirt-img"></td>
+                    <td>Classic Riders</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td><img src="Get Lost In Space Shirt.jpg" alt="Get Lost in Space" class="shirt-img"></td>
+                    <td>Get Lost In Space</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td><img src="Scooter Shirt.jpg" alt="Scooter" class="shirt-img"></td>
+                    <td>Scooter</td>
+                    <td>Rp.50.000,-</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <div class="menu-container">
+            <div class="menu-item">
+                <h3>Galeri Kaus</h3>
+                <a href="galerikaussharko.html" class="menu-button">Lihat Galeri</a>
+            </div>
+            <div class="menu-item">
+                <h3>SHARKO Home</h3>
+                <a href="index.html" class="menu-button">Kembali ke Home</a>
+            </div>
+        </div>
+    </section>
+    </center>
+</body>
+</html>
